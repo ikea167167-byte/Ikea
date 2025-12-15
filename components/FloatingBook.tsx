@@ -3,6 +3,18 @@ import { useFrame } from '@react-three/fiber';
 import { Float, Text } from '@react-three/drei';
 import * as THREE from 'three';
 
+// Augment JSX namespace to include React Three Fiber elements
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      group: any;
+      mesh: any;
+      boxGeometry: any;
+      meshStandardMaterial: any;
+    }
+  }
+}
+
 interface FloatingBookProps {
   position: [number, number, number];
   color: string;

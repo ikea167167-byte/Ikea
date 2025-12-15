@@ -1,7 +1,20 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Environment, Stars, Sparkles } from '@react-three/drei';
+import { Stars, Sparkles } from '@react-three/drei';
 import FloatingBook from './FloatingBook';
+
+// Augment JSX namespace to include React Three Fiber elements
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      fog: any;
+      ambientLight: any;
+      hemisphereLight: any;
+      directionalLight: any;
+      pointLight: any;
+    }
+  }
+}
 
 const MagicScene: React.FC = () => {
   return (
@@ -10,11 +23,11 @@ const MagicScene: React.FC = () => {
         <fog attach="fog" args={['#1a237e', 5, 20]} />
         
         <Suspense fallback={null}>
-          <Environment preset="city" />
-          
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1} castShadow />
-          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#D4AF37" />
+          {/* Replaced Environment preset with manual lighting to avoid fetch errors */}
+          <ambientLight intensity={0.6} />
+          <hemisphereLight intensity={0.5} color="#fdfbf7" groundColor="#1a237e" />
+          <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
+          <pointLight position={[-10, -10, -10]} intensity={0.8} color="#D4AF37" />
 
           {/* Background Atmosphere */}
           <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />

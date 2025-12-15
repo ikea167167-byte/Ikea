@@ -51,7 +51,7 @@ const App: React.FC = () => {
             </div>
 
             <div className="hidden md:flex items-center gap-4 text-xs font-bold text-gray-500 tracking-widest">
-              <span>EST. 2024</span>
+              <span>EST. 2025</span>
               <span>•</span>
               <span className="text-official-blue">SYSTEM ONLINE</span>
             </div>
@@ -160,8 +160,8 @@ const App: React.FC = () => {
                   <h4 className="font-serif font-bold text-official-blue mb-4">联系我们</h4>
                   <p className="text-xs text-gray-500 leading-relaxed">
                      广州市白云区同和第三幼儿园<br/>
-                     图书馆管理办公室<br/>
-                     Email: library@tonghe3.edu.cn
+                     教学办公室<br/>
+                     Email: 3961502060@qq.com
                   </p>
                </div>
                <div>
@@ -182,7 +182,7 @@ const App: React.FC = () => {
                </div>
             </div>
             <div className="mt-8 pt-8 border-t border-gray-100 text-center text-[10px] text-gray-400 uppercase tracking-widest">
-               © 2024 Tonghe No.3 Kindergarten. All Rights Reserved.
+               © 2025 Tonghe No.3 Kindergarten. All Rights Reserved.
             </div>
           </div>
         </footer>
